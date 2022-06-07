@@ -53,12 +53,14 @@ public class BusinessFlowJPetStore {
 
 		//Iterating
 		XSSFCell searchKey;
-		for(int i=0;i<=row;i++) {
+		for(int i=0;i<=row;i++)
+		{
 			searchKey=sheet.getRow(i).getCell(0);
 			driver.findElement(By.xpath(prop.getProperty("searchInput"))).sendKeys(searchKey.toString());
 			driver.findElement(By.xpath(prop.getProperty("clickSearch"))).click();
 			Thread.sleep(2000);
-			if(i==0) {
+			if(i==0) 
+			{
 				driver.navigate().back();
 				driver.findElement(By.xpath(prop.getProperty("searchInput"))).clear();
 			}
